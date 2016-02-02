@@ -1,0 +1,22 @@
+
+<p class="dataList">
+</p>
+
+@section scripts
+{
+    <script>
+        $( document ).ready(function() {
+           $.getJSON( "/api/products", function( data ) {
+                var items = [];
+                $.each( data, function( key, val ) {
+                    items.push( "<li id='" + key + "'>" + val.Name + "</li>" );
+                });
+                
+                $( "<ul/>", {
+                    "class": "dataList",
+                    html: items.join( "" )
+                }).appendTo( ".dataList" );
+                });
+        });
+    </script>
+}

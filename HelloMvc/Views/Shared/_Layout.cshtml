@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sample app for TechReady22">
+    <meta name="author" content="glennc">
+    <link rel="icon" href="images/favicon.ico">
+
+    <title>TechReady 22</title>
+
+    <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
+    <link href="css/cover.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">TechReady</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li active-controller="Index"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                  <li active-controller="Data"><a asp-controller="Home" asp-action="Data">Data</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            @RenderBody()
+          </div>
+          
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@@mdo</a>.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"
+            asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+            asp-fallback-test="window.jQuery">
+    </script>
+    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
+            asp-fallback-src="js/vendor/bootstrap.min.js"
+            asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+    </script>
+    @RenderSection("scripts", required: false)
+  </body>
+</html>
